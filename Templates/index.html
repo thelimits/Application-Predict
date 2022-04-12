@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- link for font awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <!-- link jquery script -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <!-- link for css -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Predicted Covid</title>
+</head>
+<body>
+    <header>
+        <div id="icon">
+            <a  href="{{ url_for('Home_index') }}" >
+                <span style="margin-left: 5px; margin-right: 5px; margin-top: auto; margin-bottom: auto;">Health Prediction</span>
+            </a>  
+        </div>
+        <div id="covid">
+            <span style="margin-left: 5px; margin-right: 5px; margin-top: auto; margin-bottom: auto;">Covid Prediction</span>
+        </div>
+    </header>
+    <div id="container">
+        <div id="Head">
+            <h2>Covid-19 Predicted</h2>
+        </div>
+        <div class="form-login">   
+            <form action="" id="Predicted" class="input-form" action = '/' method = "POST" enctype="multipart/form-data">
+                <div id = "first">
+                    <input type="text" id="FirstName" name = "FirstName" class="FN" placeholder="First Name" required>
+                    <input type="text" id="LatName" name = "LN" class="LN" placeholder="Last Name" required>
+                </div> 
+                <div id = "first">
+                    <input type="tel" id="Telp" class="T" placeholder="No Handphone" pattern="[0-9]*" required>
+                </div> 
+                <div id = "first">
+                    <input type="email" id="email" name = "email" class="E" placeholder="Email Anda" required>
+                </div> 
+                <div id = "first">
+                    <input type="number" id="Age" class="Age" name = "age" placeholder="Age" required>
+                    <input type="text" id="gender" class="gender" name = "gender" placeholder="Gender" required>
+                </div> 
+                <div id = "first">
+                    <input type="file" id="file" name = 'imagefile' class="F" placeholder="File Anda" required hidden = "hidden" required>
+                    <div id="button_file">
+                        <span id="txt">Choose File</span>
+                        <span id="value">No File Input</span>
+                    </div>
+                </div> 
+                <span id = "lngs">*Please Insert Image x-ray lungs*</span>
+                <button type="submit" class="submit-buttons" id="submit-buttons submit-buttonslogin" name = "predict">Submit</button>
+            </form>
+        </div>
+        
+    </div>
+    <script type=text/javascript src="{{url_for('static', filename='engine.js')}}"></script>
+</body>
+</html>
